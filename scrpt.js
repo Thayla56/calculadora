@@ -1,1 +1,1 @@
-function calcularCombinaçao
+function calcularCombinações(){}
