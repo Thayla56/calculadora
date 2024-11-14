@@ -1,12 +1,15 @@
 function calcularCombinações() {
-    const n = parseInt(document.getElementById('n').value);
-    const p = parseInt(document.getElementById('p').value);
-    const combinacoes = calcularCombinaçõesRecursivas(n, p);
-    document.getElementById('resultado').innerText = `Número de combinações: ${combinacoes}`;
+    const numElementos = parseInt(document.getElementById('num-elementos').value);
+    const numCombinacoes = parseInt(document.getElementById('num-combinacoes').value);
+    const resultado = combinações(numElementos, numCombinacoes);
+    document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
 }
 
-function calcularCombinaçõesRecursivas(n, p) {
-    if (p === 0) return 1;
-    if (n === p) return 1;
-    return calcularCombinaçõesRecursivas(n - 1, p - 1) + calcularCombinaçõesRecursivas(n - 1, p);
+function combinações(n, k) {
+    if (k > n) return 0;
+    let resultado = 1;
+    for (let i = 1; i <= k; i++) {
+        resultado = resultado * (n - i + 1) / i;
+    }
+    return resultado;
 }
