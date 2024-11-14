@@ -1,7 +1,7 @@
 function calcularCombinações() {
-    const numElementos = parseInt(document.getElementById('num-elementos').value);
-    const numCombinacoes = parseInt(document.getElementById('num-combinacoes').value);
-    const resultado = combinações(numElementos, numCombinacoes);
+    const n = parseInt(document.getElementById('n').value);
+    const k = parseInt(document.getElementById('k').value);
+    const resultado = combinações(n, k);
     document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
 }
 
@@ -11,5 +11,5 @@ function combinações(n, k) {
     for (let i = 1; i <= k; i++) {
         resultado = resultado * (n - i + 1) / i;
     }
-    return resultado; (n-k)
+    return resultado;
 }
