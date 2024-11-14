@@ -11,5 +11,5 @@ function combinações(n, k) {
     for (let i = 1; i <= k; i++) {
         resultado = resultado * (n - i + 1) / i;
     }
-    return resultado;
+    return resultado; (n-k)
 }
